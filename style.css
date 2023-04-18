@@ -11,7 +11,7 @@ body {
   font-family: "Yanone Kaffeesatz";
 }
 body {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -57,11 +57,23 @@ h6 {
     scroll-behavior: auto !important;
   }
 }
+h2 {
+  font-size: 3rem;
+  color: rgb(224, 217, 217);
+}
+
+p {
+  font-size: 1rem;
+}
 
 .navbar {
   display: flex;
   justify-content: center;
   gap: clamp(0.5rem, 4vw, 4rem);
+  transition: background-color 1s ease-in-out;
+}
+.navbar:hover {
+  background-color: #705a2b;
 }
 
 .navbar a {
@@ -76,10 +88,64 @@ h6 {
 .navbar a:hover {
   color: #ffffff;
 }
+.text {
+  font-family: "Yanone Kaffeesatz";
+  font-size: 100px;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  left: 50%;
+  transform: translateX(-50%);
+  user-select: none;
+}
+.text .wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+.text .wrapper .letter {
+  transition: 2s cubic-bezier(0.25, -0.02, 0.26, 0.95);
+  transform: translateY(40%);
+  color: rgb(233, 227, 227);
+}
+.text .wrapper .shadow {
+  transform: scale(1, -1);
+  color: #2c2c2c;
+  transition: ease-in 5s, ease-out 5s;
+}
+.text .wrapper:hover .letter {
+  transform: translateY(-3%);
+  transition-duration: 500ms;
+}
+.text .wrapper:hover .shadow {
+  opacity: 0;
+  transform: translateY(100%);
+}
+.text .wrapper:nth-child(6) {
+  margin-right: 15px;
+}
+
+.text .wrapper:nth-child(7) {
+  margin-left: 15px;
+}
+
+@media (max-width: 500px) {
+  .text {
+    font-family: "Yanone Kaffeesatz";
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+  }
+  .text .wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+  }
+}
 
 .intro {
-  margin-top: 1rem;
-  margin-bottom: 3rem;
+  padding-bottom: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,70 +162,75 @@ h6 {
   filter: brightness(0.93) contrast(1.2);
 }
 
-.presentation-headline {
-  font-size: 70px;
+h2 {
+  font-size: 3rem;
 }
 
 .presentation {
-  max-width: 400px;
+  max-width: 700px;
   padding-inline: 1rem;
+  font-size: 20px;
   color: rgb(192, 187, 187);
-}
-
-.projects-headline {
-  font-size: 50px;
-  text-align: center;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-  color: rgb(192, 187, 187);
-  text-decoration: underline;
 }
 
 .projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: clamp(1rem, 8vw, 8rem);
-  max-width: 1400px;
-  padding-inline: 2rem;
-  margin-inline: auto;
   text-align: center;
+  padding-bottom: 4rem;
 }
 
-.projects img {
+.projects-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(1rem, 8vw, 8rem);
+  max-width: 1200px;
+  padding-inline: 1rem;
+  margin-inline: auto;
+  text-align: center;
+  padding-block: 1rem;
+}
+
+.projects-gallery img {
   border-radius: 300rem;
+  object-fit: cover;
+  border: 3px solid white;
   width: 100%;
+  aspect-ratio: 1/1;
   margin-bottom: 1rem;
 }
 
-.projects a {
+.projects-gallery a {
   color: rgb(192, 187, 187);
   text-decoration: none;
   margin-bottom: 1rem;
   font-size: 30px;
+  transition: 0.7s;
+}
+
+.projects-gallery a:hover {
+  color: white;
 }
 
 .connect {
+  padding-block: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 3rem;
+  transition: background-color 1s ease-in-out;
+}
+
+.connect:hover {
+  background-color: #705a2b;
 }
 
 .connect-headline {
   font-size: 50px;
   text-align: center;
-  padding-top: 3rem;
   color: rgb(192, 187, 187);
-  text-decoration: underline;
-}
-
-.connect {
-  padding: 5rem;
+  text-decoration: none;
 }
 
 .icon-link {
-  margin-top: 1rem;
   font-size: 40px;
   display: inline-flex;
   padding-inline: 0.68rem;
@@ -172,94 +243,4 @@ h6 {
 
 .icon-link:hover {
   color: white;
-}
-
-footer {
-  position: relative;
-  border-top: 1px solid rgb(36, 33, 33);
-  bottom: 0;
-  width: 100%;
-  height: 50px;
-  color: rgb(192, 187, 187);
-  background-color: black;
-}
-
-.footer-container {
-  margin: 0 auto;
-  text-align: center;
-}
-
-p {
-  font-size: 20px;
-  padding: 2rem;
-  line-height: 50px;
-  margin: 0;
-}
-
-/* .overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 30vh;
-  z-index: 100;
-  background: white;
-  background: linear-gradient(
-    0deg,
-    white 75%,
-    rgba(255, 255, 255, 0.9) 80%,
-    rgba(255, 255, 255, 0.25) 95%,
-    rgba(255, 255, 255, 0) 100%
-  );
-} */
-
-.text {
-  font-family: "Yanone Kaffeesatz";
-  margin-top: 2rem;
-  font-size: 100px;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  bottom: 3rem;
-  left: 50%;
-  transform: translateX(-50%);
-  user-select: none;
-}
-.text .wrapper {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
-}
-.text .wrapper .letter {
-  transition: ease-out 1s;
-  transform: translateY(40%);
-  color: rgb(233, 227, 227);
-}
-.text .wrapper .shadow {
-  transform: scale(1, -1);
-  color: #999;
-  transition: ease-in 5s, ease-out 5s;
-}
-.text .wrapper:hover .letter {
-  transform: translateY(-200%);
-}
-.text .wrapper:hover .shadow {
-  opacity: 0;
-  transform: translateY(200%);
-}
-
-@media (max-width: 500px) {
-  /* Skriv CSS-kod här för att minska font-storleken för mobilvy */
-  .text {
-    font-family: "Yanone Kaffeesatz";
-    font-size: 60px;
-    display: flex;
-    justify-content: center;
-    user-select: none;
-  }
-  .text .wrapper {
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-  }
 }
