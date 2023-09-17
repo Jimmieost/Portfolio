@@ -144,7 +144,7 @@ p {
   }
 }
 
-.intro {
+#intro {
   padding-bottom: 5rem;
   display: flex;
   justify-content: center;
@@ -153,7 +153,7 @@ p {
   flex-wrap: wrap;
 }
 
-.intro img {
+#intro img {
   height: 50%;
   position: relative;
   z-index: -1;
@@ -173,12 +173,12 @@ h2 {
   color: rgb(192, 187, 187);
 }
 
-.projects {
+#projects {
   text-align: center;
   padding-bottom: 4rem;
 }
 
-.projects-gallery {
+#projects-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: clamp(1rem, 8vw, 8rem);
@@ -189,16 +189,24 @@ h2 {
   padding-block: 1rem;
 }
 
-.projects-gallery img {
+#projects-gallery img {
   border-radius: 300rem;
   object-fit: cover;
-  border: 3px solid white;
+  border: 3px solid rgb(224, 217, 217);
   width: 100%;
   aspect-ratio: 1/1;
   margin-bottom: 1rem;
+  transition: transform 300ms, background-color 300ms;
 }
 
-.projects-gallery a {
+#projects-gallery img:hover {
+  -ms-transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
+  border: 3px solid white;
+}
+
+#projects-gallery a {
   color: rgb(192, 187, 187);
   text-decoration: none;
   margin-bottom: 1rem;
@@ -206,12 +214,12 @@ h2 {
   transition: 0.7s;
 }
 
-.projects-gallery a:hover {
+#projects-gallery a:hover {
   color: white;
 }
 
-.connect {
-  padding-block: 2rem;
+#connect {
+  padding-block: 1rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -219,11 +227,11 @@ h2 {
   transition: background-color 1s ease-in-out;
 }
 
-.connect:hover {
+#connect:hover {
   background-color: #705a2b;
 }
 
-.connect-headline {
+#connect-headline {
   font-size: 50px;
   text-align: center;
   color: rgb(192, 187, 187);
