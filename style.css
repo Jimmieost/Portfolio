@@ -232,7 +232,12 @@ p {
 
 .github-link {
   font-size: 16px !important;
-  color: rgb(59, 224, 17) !important;
+  color: #bb9440 !important;
+}
+
+.github-link:hover {
+  font-size: 17px !important;
+  color: white !important;
 }
 
 #projects-gallery a:hover {
