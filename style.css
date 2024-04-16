@@ -64,6 +64,7 @@ h2 {
 
 p {
   font-size: 1rem;
+  margin-bottom: 0;
 }
 
 .navbar {
@@ -176,8 +177,9 @@ p {
   filter: brightness(0.93) contrast(1.2);
 }
 
-h2 {
+#projects h2 {
   font-size: 3rem;
+  margin-bottom: 3rem;
 }
 
 .presentation {
@@ -204,7 +206,7 @@ h2 {
 }
 
 #projects-gallery img {
-  border-radius: 300rem;
+  border-radius: 1rem;
   object-fit: cover;
   border: 3px solid rgb(224, 217, 217);
   width: 100%;
@@ -226,6 +228,11 @@ h2 {
   margin-bottom: 1rem;
   font-size: 30px;
   transition: 0.7s;
+}
+
+.github-link {
+  font-size: 16px !important;
+  color: rgb(59, 224, 17) !important;
 }
 
 #projects-gallery a:hover {
